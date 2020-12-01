@@ -129,9 +129,9 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/chartxy.html
-[Progressive line series]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/progressivelineseries.html
-[HEX color factory]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#colorhex
-[Bands]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/band.html
-[ConstantLines]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/constantline.html
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v2.1.0/classes/chartxy.html
+[Progressive line series]: https://www.arction.com/lightningchart-js-api-documentation/v2.1.0/classes/progressivelineseries.html
+[HEX color factory]: https://www.arction.com/lightningchart-js-api-documentation/v2.1.0/globals.html#colorhex
+[Bands]: https://www.arction.com/lightningchart-js-api-documentation/v2.1.0/classes/band.html
+[ConstantLines]: https://www.arction.com/lightningchart-js-api-documentation/v2.1.0/classes/constantline.html
 
