@@ -7,8 +7,6 @@ const lcjs = require('@arction/lcjs')
 // Extract required parts from LightningChartJS.
 const {
     lightningChart,
-    DataPatterns,
-    UIOrigins,
     ColorHEX,
     SolidLine,
     SolidFill,
@@ -28,8 +26,8 @@ const chart = lightningChart().ChartXY({
 })
     .setTitle(chartTitle)
 
-// Add a progressive line series.
-const series = chart.addLineSeries({ dataPattern: DataPatterns.horizontalProgressive })
+// Add a line series.
+const series = chart.addLineSeries()
 
 // Generate random progressive points using 'xydata'-library.
 createProgressiveTraceGenerator()
@@ -101,8 +99,6 @@ yAxisConstantLine.setStrokeStyle(
         fillStyle: new SolidFill({ color: ColorHEX('#9c5') })
     }))
 
-// Add a LegendBox, add the Chart in it and position it.
+// Add a LegendBox, add the Chart in it.
 chart.addLegendBox()
-    .setPosition({ x: 5, y: 95 })
-    .setOrigin(UIOrigins.LeftTop)
     .add(chart)
