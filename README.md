@@ -1,6 +1,6 @@
-# Bands and Constant lines
+# JavaScript Chart Bands and Constant lines
 
-![Bands and Constant lines](bandsConstantLines.png)
+![JavaScript Chart Bands and Constant lines](bandsConstantLines.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
