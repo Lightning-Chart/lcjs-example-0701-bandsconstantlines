@@ -7,9 +7,6 @@ const lcjs = require('@arction/lcjs')
 // Extract required parts from LightningChartJS.
 const {
     lightningChart,
-    ColorHEX,
-    SolidLine,
-    SolidFill,
     Themes
 } = lcjs
 
@@ -22,7 +19,7 @@ const chartTitle = 'Bands and Constantlines'
 
 // Create a XY Chart.
 const chart = lightningChart().ChartXY({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
 })
     .setTitle(chartTitle)
 
@@ -79,26 +76,11 @@ yAxisBand
     .setValueEnd(2)
     .setValueStart(-3)
 
-// Style the Y Axis Band
-yAxisBand
-    .setStrokeStyle(
-        new SolidLine({
-            thickness: 3,
-            fillStyle: new SolidFill({ color: ColorHEX('#6a05') })
-        })
-    )
-yAxisBand
-    .setFillStyle(
-        new SolidFill({ color: ColorHEX('#5b19') })
-    )
-
-// Style the Y Axis Constantline
-yAxisConstantLine.setStrokeStyle(
-    new SolidLine({
-        thickness: 6,
-        fillStyle: new SolidFill({ color: ColorHEX('#9c5') })
-    }))
-
 // Add a LegendBox, add the Chart in it.
 chart.addLegendBox()
+    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
+    .setAutoDispose({
+        type: 'max-width',
+        maxWidth: 0.30,
+    })
     .add(chart)
