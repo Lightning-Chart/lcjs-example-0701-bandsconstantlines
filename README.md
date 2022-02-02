@@ -129,9 +129,9 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/chartxy.html
-[Line series]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/lineseries.html
-[HEX color factory]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#colorhex
-[Bands]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/band.html
-[ConstantLines]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/classes/constantline.html
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v3.4.0/classes/chartxy.html
+[Line series]: https://www.arction.com/lightningchart-js-api-documentation/v3.4.0/classes/lineseries.html
+[HEX color factory]: https://www.arction.com/lightningchart-js-api-documentation/v3.4.0/globals.html#colorhex
+[Bands]: https://www.arction.com/lightningchart-js-api-documentation/v3.4.0/classes/band.html
+[ConstantLines]: https://www.arction.com/lightningchart-js-api-documentation/v3.4.0/classes/constantline.html
 
