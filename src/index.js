@@ -4,23 +4,22 @@
 // Import LightningChartJS
 const lcjs = require('@arction/lcjs')
 
+// Import xydata
+const xydata = require('@arction/xydata')
+
 // Extract required parts from LightningChartJS.
-const {
-    lightningChart,
-    Themes
-} = lcjs
+const { lightningChart, Themes } = lcjs
 
 // Import data-generator from 'xydata'-library.
-const {
-    createProgressiveTraceGenerator
-} = require('@arction/xydata')
+const { createProgressiveTraceGenerator } = xydata
 
 const chartTitle = 'Bands and Constantlines'
 
 // Create a XY Chart.
-const chart = lightningChart().ChartXY({
-    // theme: Themes.darkGold
-})
+const chart = lightningChart()
+    .ChartXY({
+        // theme: Themes.darkGold
+    })
     .setTitle(chartTitle)
 
 // Add a line series.
@@ -31,15 +30,16 @@ createProgressiveTraceGenerator()
     .setNumberOfPoints(100)
     .generate()
     .toPromise()
-    .then(data => {
+    .then((data) => {
         series.add(data)
     })
 
 // Get the default X and Y Axis
 const xAxis = chart.getDefaultAxisX()
-const yAxis = chart.getDefaultAxisY()
+const yAxis = chart
+    .getDefaultAxisY()
     // Set the interval for Y Axis.
-    .setInterval(-10, 10, true, true)
+    .setInterval({ start: -10, end: 10, animate: true })
 
 // Add a Constantline to the X Axis
 const xAxisConstantline = xAxis.addConstantLine()
@@ -72,15 +72,14 @@ yAxisBand.setName('Y Axis Band')
 yAxisConstantLine.setValue(9)
 
 // Position the Y Axis Band along the visible Scale of the Axis.
-yAxisBand
-    .setValueEnd(2)
-    .setValueStart(-3)
+yAxisBand.setValueEnd(2).setValueStart(-3)
 
 // Add a LegendBox, add the Chart in it.
-chart.addLegendBox()
+chart
+    .addLegendBox()
     // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
     .setAutoDispose({
         type: 'max-width',
-        maxWidth: 0.30,
+        maxWidth: 0.3,
     })
     .add(chart)
