@@ -8,7 +8,7 @@ const lcjs = require('@lightningchart/lcjs')
 const xydata = require('@lightningchart/xydata')
 
 // Extract required parts from LightningChartJS.
-const { lightningChart, Themes } = lcjs
+const { lightningChart, emptyFill, Themes } = lcjs
 
 // Import data-generator from 'xydata'-library.
 const { createProgressiveTraceGenerator } = xydata
@@ -25,7 +25,7 @@ const chart = lightningChart({
     .setTitle(chartTitle)
 
 // Add a line series.
-const series = chart.addLineSeries()
+const series = chart.addPointLineAreaSeries({ dataPattern: 'ProgressiveX' }).setAreaFillStyle(emptyFill)
 
 // Generate random progressive points using 'xydata'-library.
 createProgressiveTraceGenerator()
