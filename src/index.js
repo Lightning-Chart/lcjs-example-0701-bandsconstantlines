@@ -25,7 +25,7 @@ const chart = lightningChart({
     .setTitle(chartTitle)
 
 // Add a line series.
-const series = chart.addPointLineAreaSeries({ dataPattern: 'ProgressiveX' }).setAreaFillStyle(emptyFill)
+const series = chart.addLineSeries()
 
 // Generate random progressive points using 'xydata'-library.
 createProgressiveTraceGenerator()
@@ -33,7 +33,7 @@ createProgressiveTraceGenerator()
     .generate()
     .toPromise()
     .then((data) => {
-        series.add(data)
+        series.appendJSON(data)
     })
 
 // Get the default X and Y Axis
@@ -44,14 +44,14 @@ const yAxis = chart
     .setInterval({ start: -10, end: 10, animate: true })
 
 // Add a Constantline to the X Axis
-const xAxisConstantline = xAxis.addConstantLine()
+const xAxisConstantline = xAxis.addConstantLine({legend: { visible: true }})
 // Position the Constantline in the Axis Scale
 xAxisConstantline.setValue(80)
-// The name of the Constantline will be shown in the LegendBox
+// The name of the Constantline will be shown in the Legend
 xAxisConstantline.setName('X Axis Constantline')
 
 // Add a Band to the X Axis
-const xAxisBand = xAxis.addBand()
+const xAxisBand = xAxis.addBand({legend: { visible: true }})
 // Set the start and end values of the Band.
 xAxisBand
     .setValueStart(10)
@@ -61,13 +61,13 @@ xAxisBand
 
 // Add Band and ConstantLine to the Y Axis
 
-// If 'false' is given as argument here, the Constantline will be rendered behind
+// If {onTop: false} is given as argument here, the Constantline will be rendered behind
 // all the Series in the Chart.
-const yAxisConstantLine = yAxis.addConstantLine(false)
+const yAxisConstantLine = yAxis.addConstantLine({legend: { visible: true, onTop: false }})
 yAxisConstantLine.setName('Y Axis Constantline')
-// Giving 'false' as argument here makes sure the Band is rendered behind all
+// Giving {onTop: false} as argument here makes sure the Band is rendered behind all
 // the Series in the Chart.
-const yAxisBand = yAxis.addBand(false)
+const yAxisBand = yAxis.addBand(({legend: { visible: true, onTop: false }}))
 yAxisBand.setName('Y Axis Band')
 
 // Position the Y Axis ConstantLine along the visible Scale of the Axis.
@@ -75,13 +75,3 @@ yAxisConstantLine.setValue(9)
 
 // Position the Y Axis Band along the visible Scale of the Axis.
 yAxisBand.setValueEnd(2).setValueStart(-3)
-
-// Add a LegendBox, add the Chart in it.
-chart
-    .addLegendBox()
-    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
-    .setAutoDispose({
-        type: 'max-width',
-        maxWidth: 0.3,
-    })
-    .add(chart)
